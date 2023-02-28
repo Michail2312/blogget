@@ -5,15 +5,17 @@ import Heading from "./Hading";
 import Search from "./Search";
 import Auth from "./Auth";
 
+const heading = "Главная"; // типо ответ от сервера :)
+
 export const Header = () => {
   return (
     <header className={style.header}>
       <Layout>
         <div className={style.gridContainer}>
           <Logo />
-          <Heading />
+          <Heading heading={heading} />
           <Search />
-          <Auth auth="BUKA"/>
+          <Auth auth="BUKA" />
         </div>
       </Layout>
     </header>
