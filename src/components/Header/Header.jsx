@@ -1,7 +1,7 @@
 import style from "./Header.module.css";
 import Layout from "../Layout";
 import Logo from "./Logo";
-import Heading from "./Hading";
+import Heading from "./Heading";
 import Search from "./Search";
 import Auth from "./Auth";
 

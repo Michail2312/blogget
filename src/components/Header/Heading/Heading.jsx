@@ -1,6 +1,6 @@
 import React from "react";
-import style from "./Hading.module.css";
+import style from "./Heading.module.css";
 
-export const Hading = ({ heading }) => {
+export const Heading = ({ heading }) => {
   return <h1 className={style.heading}>{heading}</h1>;
 };
