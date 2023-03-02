@@ -7,5 +7,5 @@ export const Layout = ({ children }) => (
 );
 
 Layout.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.array,
 };
