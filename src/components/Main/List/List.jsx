@@ -7,7 +7,7 @@ export const List = (props) => {
     title: "Title",
     author: "NICK NAME",
     ups: 24,
-    date: "2023-03-04T09:45:00.000Z",
+    date: "2023-03-04T19:09:00.000",
   };
   return (
     <ul className={style.list}>
