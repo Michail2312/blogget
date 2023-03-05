@@ -8,8 +8,8 @@ import notphoto from "./img/notphoto.jpg";
 import deletePostIcon from "../../../../utils/deletPostIcon";
 import style from "./Post.module.css";
 
-export const Post = ({ postData }) => {
-  const { title, author, ups, date } = postData;
+export const Post = ({ postsData }) => {
+  const { title, author, ups, date } = postsData;
 
   return (
     <li className={style.post}>
@@ -23,5 +23,9 @@ export const Post = ({ postData }) => {
 };
 
 Post.propTypes = {
-  postData: PropTypes.object,
+  postsData: PropTypes.object,
+  title: PropTypes.string,
+  author: PropTypes.string,
+  ups: PropTypes.string,
+  date: PropTypes.string,
 };
