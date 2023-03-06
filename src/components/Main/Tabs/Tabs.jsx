@@ -14,13 +14,14 @@ import { ReactComponent as HotIcon } from "../../../img/hot.svg";
 const LIST = [
   { value: "Главная", Icon: HomeIcon },
   { value: "Топ", Icon: TopIcon },
-  { value: "Сохраненные", Icon: BestIcon },
-  { value: "Мои посты", Icon: HotIcon },
+  { value: "Лучшие", Icon: BestIcon },
+  { value: "Горячие", Icon: HotIcon },
 ].map(assaingId);
 
 export const Tabs = () => {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const [isDropDown, setIsDropDown] = useState(false);
+  const [isDropDownNameMenu, setIsDropDownNameMenu] = useState("Главная");
 
   const handleResize = () => {
     if (document.documentElement.clientWidth < 768) {
@@ -39,6 +40,11 @@ export const Tabs = () => {
     };
   }, []);
 
+  const toggleMenu = (value) => {
+    setIsDropDownOpen(false);
+    setIsDropDownNameMenu(value);
+  };
+
   return (
     <div className={style.container}>
       {isDropDown && (
@@ -47,7 +53,7 @@ export const Tabs = () => {
             className={style.btn}
             onClick={() => setIsDropDownOpen(!isDropDownOpen)}
           >
-            МЕНЮ
+            {isDropDownNameMenu}
             <ArrowIcon width={15} height={15} />
           </button>
         </div>
@@ -56,10 +62,7 @@ export const Tabs = () => {
         <ul className={style.list}>
           {LIST.map(({ value, id, Icon }) => (
             <li key={id} className={style.item}>
-              <button
-                className={style.btn}
-                onClick={() => setIsDropDownOpen(false)}
-              >
+              <button className={style.btn} onClick={() => toggleMenu(value)}>
                 {value}
                 {Icon && <Icon width={30} height={30} />}
               </button>
