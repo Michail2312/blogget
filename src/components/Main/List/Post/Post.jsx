@@ -5,7 +5,7 @@ import TittlePost from "./TitlePost";
 import RatingPost from "./RatingPost";
 import TimeCreatePost from "./TimeCreatePost";
 import notphoto from "./img/notphoto.jpg";
-import deletePostIcon from "../../../../utils/deletPostIcon";
+import { ReactComponent as DeletePostIcon } from "../Post/img/delete.svg";
 import style from "./Post.module.css";
 
 export const Post = ({ postsData }) => {
@@ -17,7 +17,9 @@ export const Post = ({ postsData }) => {
       <TittlePost title={title} author={author} />
       <RatingPost ups={ups} />
       <TimeCreatePost date={date} />
-      <button className={style.delete}>{deletePostIcon()}</button>
+      <button className={style.delete}>
+        <DeletePostIcon />
+      </button>
     </li>
   );
 };
