@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 
-export const SVG = ({ urlImg }) => {
-  const ImgSvg = () => <img src={urlImg} />;
+export const SVG = ({ src }) => {
+  const ImgSvg = () => <img src={src} />;
   return <ImgSvg />;
 };
+
 SVG.propTypes = {
-  urlImg: PropTypes.string,
+  src: PropTypes.string,
 };
