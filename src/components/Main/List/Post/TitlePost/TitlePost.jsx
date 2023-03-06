@@ -7,7 +7,14 @@ import style from "./TitlePost.module.css";
 export const TitlePost = ({ title, author }) => (
   <div className={style.content}>
     <Text As="h2" className={style.title}>
-      <Text As="a" size={18} tsize={24} className={style.linkPost} href="#post">
+      <Text
+        As="a"
+        size={18}
+        tsize={24}
+        className={style.linkPost}
+        href="#post"
+        fontWeight={900}
+      >
         {title}
       </Text>
     </Text>

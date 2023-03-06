@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import style from "./Tabs.module.css";
 import { assaingId } from "../../../utils/generateRandomId";
 import { debounceRaf } from "../../../utils/debounce";
+import { Text } from "../../UI/Text/Text";
 
 import { ReactComponent as ArrowIcon } from "../../../img/arrow.svg";
 import { ReactComponent as HomeIcon } from "../../../img/home.svg";
@@ -61,12 +62,12 @@ export const Tabs = () => {
       {(isDropDownOpen || !isDropDown) && (
         <ul className={style.list}>
           {LIST.map(({ value, id, Icon }) => (
-            <li key={id} className={style.item}>
+            <Text As="li" key={id} className={style.item}>
               <button className={style.btn} onClick={() => toggleMenu(value)}>
                 {value}
                 {Icon && <Icon width={30} height={30} />}
               </button>
-            </li>
+            </Text>
           ))}
         </ul>
       )}

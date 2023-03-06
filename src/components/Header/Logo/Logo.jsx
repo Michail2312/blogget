@@ -1,9 +1,10 @@
 import React from "react";
 import style from "./Logo.module.css";
-import { ReactComponent as LogoIcon } from "../../../img/logo.svg";
+import { SVG } from "../../UI/Svg/SVG";
+import logo from "../../../img/logo.svg";
 
 export const Logo = () => (
   <a className={style.link} href="/">
-    <LogoIcon className={style.logo} />
+    <SVG src={logo} />
   </a>
 );

@@ -1,1 +1,2 @@
-export * from "./Text";
+import * as Text from "./Text";
+export { Text };

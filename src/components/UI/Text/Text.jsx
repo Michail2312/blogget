@@ -14,6 +14,7 @@ export const Text = (prop) => {
     children,
     href,
     center,
+    fontWeight = 100,
   } = prop;
 
   const classes = classNames(
@@ -26,7 +27,7 @@ export const Text = (prop) => {
   );
 
   return (
-    <As className={classes} href={href}>
+    <As className={classes} href={href} fontWeight={fontWeight}>
       {children}
     </As>
   );
@@ -43,6 +44,7 @@ Text.propTypes = {
     PropTypes.string,
     PropTypes.object,
     PropTypes.array,
+    PropTypes.number,
   ]),
   href: PropTypes.string,
   center: PropTypes.bool,
