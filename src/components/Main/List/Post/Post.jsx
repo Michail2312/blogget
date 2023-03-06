@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 import TittlePost from "./TitlePost";
 import RatingPost from "./RatingPost";
 import TimeCreatePost from "./TimeCreatePost";
-import notphoto from "./img/notphoto.jpg";
-import { ReactComponent as DeletePostIcon } from "../Post/img/delete.svg";
+import { ReactComponent as NotFoto } from "../../../../img/notphoto.jpg.svg";
+import { ReactComponent as DeletePostIcon } from "../../../../img/deletePost.svg";
 import style from "./Post.module.css";
 
 export const Post = ({ postsData }) => {
@@ -13,7 +13,7 @@ export const Post = ({ postsData }) => {
 
   return (
     <li className={style.post}>
-      <img className={style.img} src={notphoto} alt={title} />
+      <NotFoto className={style.img} />
       <TittlePost title={title} author={author} />
       <RatingPost ups={ups} />
       <TimeCreatePost date={date} />
