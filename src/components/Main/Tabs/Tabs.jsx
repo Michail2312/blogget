@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 import style from "./Tabs.module.css";
-import { assaingId } from "../../../utils/generateRandomId";
+import { assaignId } from "../../../utils/generateRandomId";
 import { debounceRaf } from "../../../utils/debounce";
 import { Text } from "../../UI/Text/Text";
 
@@ -17,7 +17,7 @@ const LIST = [
   { value: "Топ", Icon: TopIcon },
   { value: "Лучшие", Icon: BestIcon },
   { value: "Горячие", Icon: HotIcon },
-].map(assaingId);
+].map(assaignId);
 
 export const Tabs = () => {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
