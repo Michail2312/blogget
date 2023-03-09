@@ -19,18 +19,14 @@ export const Auth = ({ token, deleteToken }) => {
         Authorization: `bearer ${token}`,
       },
     })
-      .then((response) => {
-        if (response.status >= 400) {
-          localStorage.removeItem("bearer");
-        }
-        return response.json();
-      })
+      .then((response) => response.json())
       .then(({ name, icon_img: iconImg }) => {
         const img = iconImg.replace(/\?.*$/, "");
         setAuth({ name, img });
       })
       .catch((err) => {
         console.error(err);
+        localStorage.removeItem("bearer");
         setAuth({});
       });
   }, [token]);
