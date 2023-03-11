@@ -10,7 +10,6 @@ import style from "./Post.module.css";
 export const Post = ({ postsData }) => {
   const { title, author, ups, created } = postsData;
 
-
   return (
     <li className={style.post}>
       <NotFoto className={style.img} />
@@ -29,5 +28,5 @@ Post.propTypes = {
   title: PropTypes.string,
   author: PropTypes.string,
   ups: PropTypes.string,
-  date: PropTypes.string,
+  created: PropTypes.number,
 };

@@ -11,5 +11,5 @@ export const TimeCreatePost = ({ date }) => (
 );
 
 TimeCreatePost.propTypes = {
-  date: PropTypes.string,
+  date: PropTypes.number,
 };
