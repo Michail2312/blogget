@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import TittlePost from "./TitlePost";
+import TitlePost from "./TitlePost";
 import RatingPost from "./RatingPost";
 import TimeCreatePost from "./TimeCreatePost";
 import { ReactComponent as NotFoto } from "../../../../img/notphoto.jpg.svg";
@@ -13,7 +13,7 @@ export const Post = ({ postsData }) => {
   return (
     <li className={style.post}>
       <NotFoto className={style.img} />
-      <TittlePost title={title} author={author} />
+      <TitlePost title={title} author={author} />
       <RatingPost ups={ups} />
       <TimeCreatePost date={created} />
       <button className={style.delete}>

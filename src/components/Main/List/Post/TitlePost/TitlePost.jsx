@@ -14,6 +14,9 @@ export const TitlePost = ({ title, author }) => (
         className={style.linkPost}
         href="#post"
         fontWeight={900}
+        onClick={() => {
+          console.log("CLICK");
+        }}
       >
         {title}
       </Text>

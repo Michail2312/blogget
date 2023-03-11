@@ -6,7 +6,7 @@ export const useGetBestPosts = () => {
   const [bestPosts, setBestPosts] = useState([]);
   const { token } = useContext(tokenContext);
   useEffect(() => {
-    fetch(`${URL_API}/best?limit=100`, {
+    fetch(`${URL_API}/best`, {
       headers: {
         Authorization: `bearer ${token}`,
       },
