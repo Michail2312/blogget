@@ -11,7 +11,6 @@ export const Modal = ({ title, author, markdown, closeModal }) => {
   const overlayRef = useRef();
   const handleClick = (e) => {
     const target = e.target;
-    console.log(target.value);
     if (target === overlayRef.current || e.code === "Escape") {
       closeModal();
     }
