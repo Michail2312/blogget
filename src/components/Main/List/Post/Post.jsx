@@ -16,7 +16,12 @@ export const Post = ({ postsData }) => {
       <TitlePost title={title} author={author} />
       <RatingPost ups={ups} />
       <TimeCreatePost date={created} />
-      <button className={style.delete}>
+      <button
+        className={style.delete}
+        onClick={() => {
+          console.log("DeletePostIcon");
+        }}
+      >
         <DeletePostIcon />
       </button>
     </li>

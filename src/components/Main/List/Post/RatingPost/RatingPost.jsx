@@ -4,7 +4,7 @@ import { ReactComponent as UpRating } from "../../../../../img/up.svg";
 import { ReactComponent as DownRating } from "../../../../../img/down.svg";
 
 import style from "./RatingPost.module.css";
-import { Text } from "../../../../UI/Text/Text";
+import { Text } from "../../../../../UI/Text/Text";
 
 export const RatingPost = ({ ups }) => (
   <div className={style.rating}>

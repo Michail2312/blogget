@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Text } from "../../../../UI/Text/Text";
+import { Text } from "../../../../../UI/Text/Text";
 
 import style from "./TitlePost.module.css";
 
