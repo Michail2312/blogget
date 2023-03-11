@@ -3,7 +3,7 @@ import style from "./Auth.module.css";
 import PropTypes from "prop-types";
 import { ReactComponent as LoginIcon } from "../../../img/login.svg";
 import { urlAuth } from "../../../api/auth";
-import { Text } from "../../UI/Text/Text";
+import { Text } from "../../..//UI/Text/Text";
 import { tokenContext } from "../../../context/tokenContext";
 import { authContext } from "../../../context/authContext";
 

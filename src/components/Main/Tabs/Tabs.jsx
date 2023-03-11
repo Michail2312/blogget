@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import style from "./Tabs.module.css";
 import { assaignId } from "../../../utils/generateRandomId";
 import { debounceRaf } from "../../../utils/debounce";
-import { Text } from "../../UI/Text/Text";
+import { Text } from "../../../UI/Text/Text";
 
 import { ReactComponent as ArrowIcon } from "../../../img/arrow.svg";
 import { ReactComponent as HomeIcon } from "../../../img/home.svg";

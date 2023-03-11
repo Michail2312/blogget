@@ -1,27 +1,32 @@
 import PropTypes from "prop-types";
-
 import TitlePost from "./TitlePost";
 import RatingPost from "./RatingPost";
 import TimeCreatePost from "./TimeCreatePost";
-import { ReactComponent as NotFoto } from "../../../../img/notphoto.jpg.svg";
+import { ReactComponent as NotPhoto } from "../../../../img/notphoto.jpg.svg";
 import { ReactComponent as DeletePostIcon } from "../../../../img/deletePost.svg";
 import style from "./Post.module.css";
 
 export const Post = ({ postsData }) => {
-  const { title, author, ups, created } = postsData;
-
+  const {
+    title,
+    author,
+    ups,
+    thumbnail,
+    created,
+    selftext,
+  } = postsData;
   return (
     <li className={style.post}>
-      <NotFoto className={style.img} />
-      <TitlePost title={title} author={author} />
+      {thumbnail === "default" || thumbnail === "self" ? (
+        <NotPhoto className={style.img} />
+      ) : (
+        <img src={thumbnail} alt="?" />
+      )}
+
+      <TitlePost title={title} author={author} markdown={selftext} />
       <RatingPost ups={ups} />
       <TimeCreatePost date={created} />
-      <button
-        className={style.delete}
-        onClick={() => {
-          console.log("DeletePostIcon");
-        }}
-      >
+      <button className={style.delete}>
         <DeletePostIcon />
       </button>
     </li>

@@ -15,6 +15,7 @@ export const Text = (prop) => {
     href,
     center,
     fontWeight = 100,
+    onClick,
   } = prop;
 
   const classes = classNames(
@@ -27,7 +28,12 @@ export const Text = (prop) => {
   );
 
   return (
-    <As className={classes} href={href} fontWeight={fontWeight}>
+    <As
+      className={classes}
+      href={href}
+      fontWeight={fontWeight}
+      onClick={onClick}
+    >
       {children}
     </As>
   );
@@ -40,6 +46,7 @@ Text.propTypes = {
   tsize: PropTypes.number,
   dsize: PropTypes.number,
   className: PropTypes.string,
+  onClick: PropTypes.func,
   children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.object,
