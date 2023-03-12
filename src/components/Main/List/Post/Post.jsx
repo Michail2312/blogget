@@ -14,9 +14,6 @@ export const Post = ({ postsData }) => {
 
   const [commentsData] = useGetComments(id);
   const { post, comments } = commentsData;
-  comments;
-  post;
-  console.log(post);
   return (
     <li className={style.post}>
       {thumbnail === "default" || thumbnail === "self" ? (
