@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import formatDate from "../../utils/formatDate";
+import formatDate from "../../../utils/formatDate";
 
 import style from "./Comments.module.css";
 

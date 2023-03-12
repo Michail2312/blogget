@@ -6,7 +6,7 @@ import style from "./Modal.module.css";
 import PropTypes from "prop-types";
 
 import { ReactComponent as CloseIcon } from "../../img/close.svg";
-import { Comments } from "../Comments/Comments";
+import { Comments } from "./Comments/Comments";
 
 export const Modal = ({ closeModal, post, comments }) => {
   const overlayRef = useRef();
