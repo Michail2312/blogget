@@ -7,20 +7,13 @@ import { ReactComponent as DeletePostIcon } from "../../../../img/deletePost.svg
 import style from "./Post.module.css";
 
 export const Post = ({ postsData }) => {
-  const {
-    title,
-    author,
-    ups,
-    thumbnail,
-    created,
-    selftext,
-  } = postsData;
+  const { title, author, ups, thumbnail, created, selftext } = postsData;
   return (
     <li className={style.post}>
       {thumbnail === "default" || thumbnail === "self" ? (
         <NotPhoto className={style.img} />
       ) : (
-        <img src={thumbnail} alt="?" />
+        <img src={thumbnail} alt="avatar" />
       )}
 
       <TitlePost title={title} author={author} markdown={selftext} />
