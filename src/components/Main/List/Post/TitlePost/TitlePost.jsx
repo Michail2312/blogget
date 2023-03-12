@@ -5,7 +5,7 @@ import { Modal } from "../../../../Modal/Modal";
 
 import style from "./TitlePost.module.css";
 
-export const TitlePost = ({ title, author, markdown }) => {
+export const TitlePost = ({ title, author, post, comments }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   return (
     <div className={style.content}>
@@ -36,9 +36,8 @@ export const TitlePost = ({ title, author, markdown }) => {
       </Text>
       {isOpenModal && (
         <Modal
-          title={title}
-          author={author}
-          markdown={markdown}
+          post={post}
+          comments={comments}
           closeModal={() => setIsOpenModal(false)}
         />
       )}
@@ -50,4 +49,7 @@ TitlePost.propTypes = {
   title: PropTypes.string,
   author: PropTypes.string,
   markdown: PropTypes.string,
+  id: PropTypes.string,
+  comments: PropTypes.string,
+  post: PropTypes.string,
 };

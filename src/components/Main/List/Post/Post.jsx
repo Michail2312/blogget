@@ -1,3 +1,6 @@
+// import { useEffect } from "react";
+import { useGetComments } from "../../../..//hooks/useGetComments";
+
 import PropTypes from "prop-types";
 import TitlePost from "./TitlePost";
 import RatingPost from "./RatingPost";
@@ -7,7 +10,13 @@ import { ReactComponent as DeletePostIcon } from "../../../../img/deletePost.svg
 import style from "./Post.module.css";
 
 export const Post = ({ postsData }) => {
-  const { title, author, ups, thumbnail, created, selftext } = postsData;
+  const { title, author, ups, thumbnail, created, id } = postsData;
+
+  const [commentsData] = useGetComments(id);
+  const { post, comments } = commentsData;
+  comments;
+  post;
+  console.log(post);
   return (
     <li className={style.post}>
       {thumbnail === "default" || thumbnail === "self" ? (
@@ -16,7 +25,12 @@ export const Post = ({ postsData }) => {
         <img src={thumbnail} alt="avatar" />
       )}
 
-      <TitlePost title={title} author={author} markdown={selftext} />
+      <TitlePost
+        title={title}
+        author={author}
+        post={post}
+        comments={comments}
+      />
       <RatingPost ups={ups} />
       <TimeCreatePost date={created} />
       <button className={style.delete}>
@@ -32,4 +46,5 @@ Post.propTypes = {
   author: PropTypes.string,
   ups: PropTypes.string,
   created: PropTypes.number,
+  id: PropTypes.number,
 };

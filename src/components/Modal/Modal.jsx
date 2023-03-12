@@ -6,8 +6,9 @@ import style from "./Modal.module.css";
 import PropTypes from "prop-types";
 
 import { ReactComponent as CloseIcon } from "../../img/close.svg";
+import { Comments } from "../Comments/Comments";
 
-export const Modal = ({ title, author, markdown, closeModal }) => {
+export const Modal = ({ closeModal, post, comments }) => {
   const overlayRef = useRef();
   const handleClick = (e) => {
     const target = e.target;
@@ -28,7 +29,7 @@ export const Modal = ({ title, author, markdown, closeModal }) => {
     <div className={style.overlay} ref={overlayRef}>
       <div className={style.modal}>
         <h2 className={style.title}>
-          {title}
+          {post.title}
           <div className={style.content}>
             <Markdown
               options={{
@@ -41,11 +42,12 @@ export const Modal = ({ title, author, markdown, closeModal }) => {
                 },
               }}
             >
-              {markdown}
+              {post.selftext || " "}
             </Markdown>
           </div>
-          <p className={style.author}>{author}</p>
+          <p className={style.author}>{post.author}</p>
         </h2>
+        <Comments comments={comments} title={post.title} />
         <button className={style.close} onClick={() => closeModal()}>
           <CloseIcon />
         </button>
@@ -56,8 +58,7 @@ export const Modal = ({ title, author, markdown, closeModal }) => {
 };
 
 Modal.propTypes = {
-  title: PropTypes.string,
-  author: PropTypes.string,
   markdown: PropTypes.string,
   closeModal: PropTypes.func,
+  id: PropTypes.string,
 };
