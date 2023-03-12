@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Markdown from "markdown-to-jsx";
 import style from "./Modal.module.css";
@@ -7,8 +7,10 @@ import PropTypes from "prop-types";
 
 import { ReactComponent as CloseIcon } from "../../img/close.svg";
 import { Comments } from "./Comments/Comments";
+import { FormComment } from "./FormComment/FormComment";
 
 export const Modal = ({ closeModal, post, comments }) => {
+  const [isOpenFormComment, setIsOpenFormComment] = useState(false);
   const overlayRef = useRef();
   const handleClick = (e) => {
     const target = e.target;
@@ -47,6 +49,10 @@ export const Modal = ({ closeModal, post, comments }) => {
           </div>
           <p className={style.author}>{post.author}</p>
         </h2>
+        <button onClick={() => setIsOpenFormComment(!isOpenFormComment)}>
+          Написать комментарий
+        </button>
+        {isOpenFormComment ? <FormComment /> : null}
         <Comments comments={comments} title={post.title} />
         <button className={style.close} onClick={() => closeModal()}>
           <CloseIcon />
