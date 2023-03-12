@@ -50,6 +50,6 @@ TitlePost.propTypes = {
   author: PropTypes.string,
   markdown: PropTypes.string,
   id: PropTypes.string,
-  comments: PropTypes.string,
-  post: PropTypes.string,
+  comments: PropTypes.array,
+  post: PropTypes.object,
 };
