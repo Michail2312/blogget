@@ -9,7 +9,6 @@ import { ReactComponent as CloseIcon } from "../../img/close.svg";
 import { Comments } from "../Comments/Comments";
 
 export const Modal = ({ closeModal, post, comments }) => {
-  console.log(comments);
   const overlayRef = useRef();
   const handleClick = (e) => {
     const target = e.target;
